@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje para Liz</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom right, #fffde7, #f1e19e); /* Gradiente suave */
+        }
+        .session1, .session2 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s;
+        }
+        .session1 {
+            background-color: rgba(248, 248, 106, 0.8); /* Amarillo más claro con opacidad */
+            color: #663300; /* Marrón oscuro para el texto */
+            font-size: 36px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .session2 {
+            display: none;
+            background-color: rgba(248, 248, 106, 0.8); /* Amarillo más claro con opacidad */
+            color: #663300; /* Marrón oscuro para el texto */
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #fff; /* Fondo blanco del botón */
+            color: #663300; /* Texto marrón */
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ffdb58; /* Amarillo más claro al pasar el mouse */
+        }
+        .gif-container {
+            margin-bottom: 20px; /* Espacio entre el GIF y el texto */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="session1" id="session1">
+        
+        Mi Lizcita, cada día contigo es un regalo lleno de alegría y amor. ¡Eres increíble! ¡Te amo mucho!
+        <button onclick="goToSession2()">Ir</button>
+        <div class="gif-container"></div>
+            <img src="https://img1.picmix.com/output/pic/normal/2/5/5/6/4916552_ab71d.gif" alt="Flores Amarillas" width="300" />
+        </div>
+    </div>
+
+    <div class="session2" id="session2">
+        <iframe width="580" height="385" src="https://www.youtube.com/embed/OD5zvqGfBuw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <button onclick="goToSession1()">Volver</button>
+    </div>
+
+    <script>
+        function goToSession2() {
+            document.getElementById('session1').style.display = 'none';
+            document.getElementById('session2').style.display = 'flex';
+        }
+        
+        function goToSession1() {
+            document.getElementById('session2').style.display = 'none';
+            document.getElementById('session1').style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>
